@@ -7,18 +7,20 @@ import './Component/Footer.css';
 import './App.css';
 import Home from './Component/Home';
 import News from './Component/News';
+import About from './Component/About';
+import Contact from './Component/Contact';
 
 export default function App() {
   const { theme, toggle, dark } = useContext(ThemeContext);
   const [currentPage, setCurrentPage] = useState("home");
   const renderPage = () => {
     switch (currentPage) {
-      case "news":
+      case "home":
         return <News />;
       case "about":
-        return <StaffManager />;
+        return <About />;
       case "contact":
-        return <Cage />;
+        return <Contact />;
 
       default:
         return <div>Home Page</div>;
