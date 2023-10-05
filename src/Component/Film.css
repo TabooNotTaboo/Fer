@@ -1,7 +1,7 @@
 
 nav {
   background-color: #fff; 
-  color: #333; 
+  color: #fff; 
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -29,7 +29,7 @@ nav a {
 
 a.switch-mode {
   background-color: #333; 
-  color: #fff; 
+  color: #333; 
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 5px;

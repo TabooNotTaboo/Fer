@@ -4,7 +4,7 @@ import Footer from './Footer';
 import './Footer.css';
 import Posters from './Posters';
 import Anhbia from './Anhbia';
-function App() {
+function Home() {
   return (
     <div>
       <Film />
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext,useState } from 'react';
 import { ThemeContext } from './Component/ThemeContext';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './Component/Film.css';
@@ -13,17 +13,18 @@ import Contact from './Component/Contact';
 export default function App() {
   const { theme, toggle, dark } = useContext(ThemeContext);
   const [currentPage, setCurrentPage] = useState("home");
+
   const renderPage = () => {
     switch (currentPage) {
       case "home":
+        return <Home />;
+      case "news":
         return <News />;
       case "about":
         return <About />;
       case "contact":
         return <Contact />;
 
-      default:
-        return <div>Home Page</div>;
     } 
   }
   return (
@@ -31,12 +32,13 @@ export default function App() {
     <Router>
       <div>
         <nav style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
-          <ul>
-            <li><button onClick={() => setCurrentPage("home")}>Home</button></li>
-            <li><Link to="/news">News</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+        <ul>
+          <li><button onClick={() => setCurrentPage("home")}>Home</button></li>
+          <li><button onClick={() => setCurrentPage("news")}>News</button></li>
+          <li><button onClick={() => setCurrentPage("about")}>About</button></li>
+          <li><button onClick={() => setCurrentPage("contact")}>Contact</button></li>
+        </ul>
+         
           <div style={{ position: 'relative' }}>
             <a
               className='swicth-mode'
@@ -57,20 +59,10 @@ export default function App() {
           </div>
         </nav>
       </div>
-      <Switch>
-          <Route path="/news">
-            <News />
-          </Route>
-          <Route path="/about">
-           
-          </Route>
-          <Route path="/contact">
-            
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+      <div className="content">
+        {renderPage()}
+      </div>
+      
     </Router>
     
   );

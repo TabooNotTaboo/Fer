@@ -7,7 +7,7 @@ const themes = {
     },
     light: {
         backgroundColor: 'white',
-        color: ' black'
+        color: 'black'
     }
 }
 const initialState = {
